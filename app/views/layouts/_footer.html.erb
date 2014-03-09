@@ -1,0 +1,61 @@
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+    <div class="col-xs-6 col-sm-3 col-md-3">
+      </div>
+      <div class="col-xs-6 col-sm-2 col-md-2">
+        <ul>
+          <li class="header">
+            Our products 
+          </li>
+            <li><%= link_to "Sign up",   signup_path %></li>
+            <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+            <li><%= link_to "Apps",   "#" %></li>
+        </ul>
+      </div>
+      
+      <div class="col-xs-6 col-sm-2 col-md-2">
+        <ul>
+          <li class="header">
+            Support
+          </li>
+          <li>
+            <%= link_to "Help & Privacy",   help_path %>
+          </li>
+          <li>
+            <%= link_to "About",   about_path %>
+          </li>
+          <li>
+            <%= link_to "Contact",   contact_path %>
+          </li>
+        </ul>
+      </div>
+     
+      <div class="col-xs-6 col-sm-2 col-md-2">
+        <ul>
+          <li class="header">
+            Follow us
+          </li>
+              <li>
+                <%= link_to image_tag("icon-facebook.png", alt: "Facebook"),   "https://www.facebook.com/WhatsNapp", target: "_blank" %>
+              </li>
+        </ul>
+      </div>
+      <div class="col-xs-6 col-sm-3 col-md-3">
+      </div>
+
+    </div>
+  </div>
+  <div class="copyrights">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 cp-label text-left">
+          Copyright &copy; 2014 WhatsNapp
+          <div style="width:130px;margin-left:auto;margin-right:auto;position:relative;">
+            <a href="#" id="to-home"><span class="th-border"></span><span class="th-solid"></span><i></i><span class="th-label hidden-xs">Back to Top</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

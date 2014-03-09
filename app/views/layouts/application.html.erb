@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+
+  <meta charset="utf-8" />
+  <title>WhatsNapp - Conversations with notes on the side</title>
+  <meta property="og:title" content="WhatsNapp - Conversations with notes on the side"/>
+  <meta property="og:image" content="https://www.airhelp.eu/images/fb_og_img.png"/>
+  <meta property="og:site_name" content="WhatsNapp"/>
+  <meta property="og:type" content="website"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="description" content=""/> 
+  <meta name="keywords" content=""/>
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,latin-ext" rel="stylesheet" type="text/css"/>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" type="text/css" href="/css/ui/jquery-ui-1.10.2.custom.min-p-1718d57986110b6af2dd96b59d3db416.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap/bootstrap.min-p-1718d57986110b6af2dd96b59d3db416.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome.min-p-1718d57986110b6af2dd96b59d3db416.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/flexslider-p-1718d57986110b6af2dd96b59d3db416.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/global-p-1718d57986110b6af2dd96b59d3db416.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/layout-p-1718d57986110b6af2dd96b59d3db416.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/homepage-p-1718d57986110b6af2dd96b59d3db416.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/smart-editor-p-1718d57986110b6af2dd96b59d3db416.css"/>
+  <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
+  <style type="text/css" media="screen, projection">
+    @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
+  </style>
+
+  <script type="text/javascript">
+    var LOCALE = 'us';
+  </script>
+
+
+  <%= stylesheet_link_tag "application", media: "all",
+  "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+</head>
+<body>
+  <%= render 'layouts/header' %>
+  
+   <% flash.each do |key, value| %>
+   <div class="alert alert-<%= key %>"><%= value %></div>
+   <% end %>
+
+   <%= yield %>
+   <%= render 'layouts/footer' %>
+   <%= debug(params) if Rails.env.development? %>
+ 
+
+
+</body>
+</html>

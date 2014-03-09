@@ -1,0 +1,135 @@
+
+
+<% if signed_in? %>
+<% provide(:title, 'Home') %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+    <section>
+      <%= render 'shared/micropost_form' %>
+    </section>
+  </aside>
+  <div class="span8">
+    <h3>Micropost Feed</h3>
+    <%= render 'shared/feed' %>
+  </div>
+</div>
+<% else %>
+<% provide(:title, 'Conversations with notes on the side') %>
+<section id="home">
+
+  <div id="main-slider">
+    <ul class="slides">
+      <li>
+        <div class="img-theme home"></div>
+        <div class="flex-caption">
+          <h1 class="title">Efficient Messaging</h1>
+          <h1 class="brand"><%= link_to "WhatsNapp", signup_path %></h1>
+          <div class="caption">
+            Conversations with notes on the side to keep an eye on the essential.
+            No data shared with Facebook, Google or the NSA. Ever.
+            <%= link_to "Give it a try !", signup_path,
+            class: "btn btn-signup" %>
+            <div class="subtitle">You'll never be more efficient with messaging.</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</section>
+
+<section id="navigator">
+  <div class="container clearfix">
+    <div class="item">
+      <div class="btn-circle active" id="btn-nav-home">
+        <div class="inner">
+          <%= link_to image_tag("icon.png", alt: "Random"), root_path %>
+        </div>
+      </div>
+      <div class="btn-label">Home</div>
+    </div>
+    <div class="item">
+      <div class="btn-circle " id="btn-nav-rights">
+        <div class="inner">
+          <%= link_to image_tag("icon.png", alt: "Random"), help_path %>
+        </div>
+      </div>
+      <div class="btn-label">What's That ?</div>
+    </div>
+
+    <div class="item">
+      <div class="btn-circle " id="btn-nav-rights">
+        <div class="inner">
+          <%= link_to image_tag("icon.png", alt: "Random"), about_path %>
+        </div>
+      </div>
+      <div class="btn-label">About us</div>
+    </div>
+    <div class="item">
+      <div class="btn-circle " id="btn-nav-rights">
+        <div class="inner">
+          <%= link_to image_tag("icon.png", alt: "Random"), signin_path %>
+        </div>
+      </div>
+      <div class="btn-label">Sign in</div>
+    </div>
+    <div class="item">
+      <div class="btn-circle " id="btn-nav-apps">
+        <div class="inner">
+          <%= link_to image_tag("icon.png", alt: "Random"), 'http://www.google.com' %>
+        </div>
+      </div>
+      <div class="btn-label">Apps</div>
+    </div>
+  </div>
+</section>
+
+<div id="wrapper">
+
+<section id="how-it-works">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-5 col-sm-4 col-md-3">
+              <%= link_to image_tag("how-it-works-01.png", alt: "Random"), '' %>
+            </div>
+            <div class="col-xs-7 col-sm-8 col-md-9">
+              <h3 class="smart-edit" data-key="a10">Send messages like with any app, but simpler!</h3>
+              <div class="smart-edit" data-key="a20">
+                Super simple, super secure! Unlike other apps, your messages won't disappear if you read them from your phone before reading them on your computer. Unlike other apps, we won't share or sell any information to bigger companies. 
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-7 col-sm-8 col-md-9">
+              <h3 class="smart-edit" data-key="a30">Save your conversation highlights in a shared note.</h3>
+              <div class="smart-edit" data-key="a40">
+                Where's again that recipe your girlfriend sent you last week? What was it again your partner told you to do about that project? Don't look for anything anymore, it's right on the left side!
+              </div>
+            </div>
+            <div class="col-xs-5 col-sm-4 col-md-3">
+              <%= link_to image_tag("how-it-works-02.png", alt: "Random", class: "pull-right"), '' %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-5 col-sm-4 col-md-3">
+            <%= link_to image_tag("how-it-works-03.png", alt: "Random", class: "pull-left"), '' %>            
+            </div>
+            <div class="col-xs-7 col-sm-8 col-md-9">
+              <h3 class="smart-edit" data-key="a50">All that for free!</h3>
+              <div class="smart-edit" data-key="a60">
+                We built this messaging system because we needed a more convenient way to exchange information. We will never charge anything for it.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      </div>
+
+<% end %>

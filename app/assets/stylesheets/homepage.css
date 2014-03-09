@@ -1,0 +1,38 @@
+h1 {color:#000;font-weight:300 !important;}
+h1 a {color:#00F5FF;font-weight:300 !important;}
+.brand:hover{color:#00F5FF;font-weight:300 !important;}
+
+h2 {color:#AAA;font-weight:300 !important;font-size:64px !important;}
+
+#how-it-works {color:#8B8682 !important;font-size:13px !important;line-height:20px;}
+#how-it-works h3 {color:#FF7F50 !important;font-size:28px !important;line-height:30px !important;font-weight:500 !important;margin:0 0 20px 0;}
+#how-it-works {background-color:#eff0ea;}
+#how-it-works .container {max-width:800px;}
+#how-it-works .container .row {margin-top:40px;margin-bottom:40px;}
+
+
+
+@media all and (max-width: 480px) {
+    #navigator .item {width:50% !important;}
+    h1 {font-size:60px !important;line-height:62px !important;}
+    h2 {font-size:48px !important;line-height:50px !important;margin-bottom:20px !important;}
+    h3 {font-size:34px !important;line-height:36px !important;}
+    #why-use .subtitle {font-size:16px;line-height:17px;}
+}
+
+@media all and (min-width: 481px) and (max-width: 767px) {
+    
+    h1 {font-size:64px !important;line-height:66px !important;}
+    h2 {font-size:52px !important;line-height:54px !important;margin-bottom:20px !important;}
+    h3 {font-size:34px !important;line-height:36px !important;}
+
+    #navigator .item {width:33% !important;}
+    
+    #why-use .subtitle {font-size:16px;line-height:17px;}
+    #why-use .item {text-align: center !important;}
+    #why-use .caption {text-align: left;}
+
+    h1 {font-size:54px !important;line-height:56px !important;}
+    h2{font-size:36px !important;line-height:38px;}
+    h3{font-size:16px !important;font-weight:500 !important;line-height:17px !important;}
+}
