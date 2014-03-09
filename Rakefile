@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Whatsnapp2::Application.load_tasks
+SampleApp::Application.load_tasks
