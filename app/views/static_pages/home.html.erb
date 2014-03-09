@@ -2,6 +2,18 @@
 
 <% if signed_in? %>
 <% provide(:title, 'Home') %>
+<div id="half-slider">
+    <ul class="slides">
+      <li>
+        <div class="img-theme home_logged_in"></div>
+        <div class="flex-caption">
+          <h1 class="title">Efficient Messaging</h1>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
 <div class="row">
   <aside class="span4">
     <section>
@@ -36,17 +48,6 @@
             No data shared with Facebook, Google or the NSA. Ever.
 
             <%= link_to "Give it a try !", signup_path,class: "btn btn-signup" %>
-
-            <%= form_for(:session, url: sessions_path) do |f| %>
-
-            <%= f.label :email %>
-            <%= f.text_field :email, class: "input-group"%>
-
-            <%= f.label :password %>
-            <%= f.password_field :password , class: "input-group"%>
-            <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
-            <% end %>
-
           </div>
 
 

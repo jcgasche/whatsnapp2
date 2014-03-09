@@ -31,7 +31,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 0px;
 }
 
 section {
@@ -79,22 +79,24 @@ p {
 
 /* header */
 
-.navbar-inverse{
-  background-color: #DC143C;
+.navbar{
+  background-color: #ffd95e;
+}
+.navbar_logged_in{
+  background-color: #00B2EE;
 }
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
+  color: #FFF;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: white;
+    color: #1E90FF;
     text-decoration: none;
   }
 }
@@ -104,8 +106,7 @@ p {
   float: left; 
   margin-right: 10px;
   font-size: 1.7em;
-  color: #1E90FF;
-  text-transform: uppercase;
+  color: #333;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -208,12 +209,6 @@ aside {
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
 
 input {
   height: auto !important;

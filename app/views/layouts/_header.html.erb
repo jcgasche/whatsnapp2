@@ -1,50 +1,47 @@
   <header id="header">
     <div class="container">
-      <nav class="navbar" role="navigation">
-        <div class="navbar-header" style="position:relative;">
+      <% if signed_in? %> 
+      <nav class="navbar navbar_logged_in navbar-fixed-top" role="navigation">
+        <%else%>
+        <nav class="navbar navbar-fixed-top" role="navigation">
+          <%end%>
+          <div class="col-xs-1 col-sm-1 col-md-1">
+          </div>
+
           <% if signed_in? %> 
-          <%= link_to "whatsnapp//", root_path, id: "logo" %>
-          <%= link_to current_user.name, current_user, class: "usernametitle" %>        
-          <% else %>
-          <%= link_to "whatsnapp", root_path, id: "logo" %>      
-          <% end %>
-          <button type="button" class="navbar-toggle" id="navbar-toggle">
-            <span class="fa fa-bars"></span>
-          </button>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="navbar-nav navbar-left" id="navbar-collapse">
+          <%= link_to "WhatsNapp//", root_path, id: "logo" %>
+          <%= link_to current_user.name, current_user, class: "usernametitle" %>  
+          <ul class= "nav pull-right" id="logged_in_menu">
             <li><%= link_to "Home", root_path %></li>
-            <li class="delimiter">&nbsp;</li>
             <li><%= link_to "Help", help_path %></li>
-            <li class="delimiter">&nbsp;</li>
-            <% if signed_in? %>
             <li><%= link_to "Users", users_path %></li>
-            <li id="fat-menu" class="dropdown">
+            <li  class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Profile", current_user %></li>
                 <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Sign out", signout_path, method: "delete" %>
-                </li>
+                <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
               </ul>
             </li>
-            <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
-            <% end %>                
           </ul>
-          <ul class="navbar-nav navbar-right">
-
-            <li><%= link_to "Sign up now!", signup_path, class: "start-claim" %> </li>
-            </ul>
-          </div>
+          <% else %>
+          <%= link_to "WhatsNapp", root_path, id: "logo" %>  
+          <ul class="nav" id= "slogan">
+            <li> - Conversations with shared notes</li>
+          </ul>    
+          <ul class= "nav pull-right">
+            <li><%= form_for(:session, url: sessions_path, html: { class: "pull-right" }) do |f| %></li>
+            <li class="input-group"><%= f.text_field :email, class: "span3", placeholder: "Email address"%></li>
+            <li class="input-group"><%= f.password_field :password, class: "span3", placeholder: "Password"%></li>
+            <li class="input-group"><%= f.submit "Sign in", class: "btn btn-signin" %> </li>
+            <% end %>
+          </ul>
+          <% end %>
         </nav>
 
-        <aside id="sidebar" role="sidebar-primary" class="sidebar">
+        <aside id="sidebar" role="sidebar-primary" class="sidebar hidden-desktop">
           <div class="sidebar-inner">
             <ul>
               <li><%= link_to "Home", root_path %></li>

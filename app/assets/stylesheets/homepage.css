@@ -1,6 +1,22 @@
-h1 {color:#000;font-weight:300 !important;}
-h1 a {color:#00F5FF;font-weight:300 !important;}
-.brand:hover{color:#00F5FF;font-weight:300 !important;}
+h1 {color:#000;font-weight:400 !important;}
+h1 a {color:#2dac91;font-weight:550 !important;}
+#slogan {font-size: 16px;
+    color:#AAA;
+    margin-top:17px;
+    max-width:300px;
+    width:90%;
+    margin-left: 10px;
+    margin-right: 10px;
+    z-index:22;}
+
+#logged_in_menu {font-size: 22px;
+    color:#AAA;
+    margin-top:5px;
+    max-width:400px;
+    width:90%;
+    margin-left: 10px;
+    margin-right: 10px;
+    z-index:22;}
 
 h2 {color:#AAA;font-weight:300 !important;font-size:64px !important;}
 
