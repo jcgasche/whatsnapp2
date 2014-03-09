@@ -91,7 +91,7 @@ section {padding-top:80px;padding-bottom:80px;}
 #header.active .navbar-nav li.delimiter {padding:0 !important;margin:4px 0 !important;width:2px;height:20px;border-right:1px solid #c8cac6;}
 #header.active .navbar-nav a:hover {background-color: #efefef;}
 #header.active .navbar-nav.navbar-left{display:block !important;}
-#header.active .brand {background:url('/images/airhelp-logo.png') no-repeat center scroll !important;width:130px !important;}
+#header.active .brand {background:url('rails.png') no-repeat center scroll !important;width:130px !important;}
 #header.active .fa-bars {color:#666 !important;font-size:21px;}
 #header.active a.start-claim {background-color: #2dac91 !important;padding:4px 16px !important;color:#fff !important;display:block !important;}
 #header.active a.start-claim:hover {background-color: #2dac91 !important;}
@@ -168,22 +168,6 @@ section {padding-top:80px;padding-bottom:80px;}
 #footer .copyrights {min-height:80px;border-top:2px solid #fff;background:#eff0ec;font-size:11px;line-height:12px;color:#FF7F50;}
 #footer .cp-label {padding:20px 15px 0px 15px;}
 
-#mobile-apps .get-our-free-apps p {color:#2dac91;margin-top:20px;margin-bottom:20px;font-size: 16px;}
-
-#cookie-info {
-    width: 100%;
-    background-color: #fff;
-    text-align: center;
-    padding: 25px 12px;
-    color: #B0171F;
-    font-size: 12px;
-    line-height: 18px;
-    visibility:visible;
-    opacity:1;
-    transition-delay:0s;
-}
-#cookie-info i {color:#ccceca;font-size:12px;margin-left:6px;line-height:12px;}
-#cookie-info .btn-close-cookie {margin-left:20px;font-size:12px;}
 
 #to-home {
     height:85px;
