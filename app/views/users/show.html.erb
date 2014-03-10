@@ -2,55 +2,69 @@
 
 <% if signed_in? %>
 <div class="row">
-		<%= render 'shared/conversation_info' %>
+	<%= render 'shared/conversation_info' %>
 </div>
 
 <div class="row-fluid">
-  <div class="span12">
-	<div class="span6" id= "notes">
-		<h2 class="conv-title">Notes</h2>
-		
-	</div>
-	<div class="span6" id= "conversation">
-		<h2 class="conv-title">Messages</h2>
-
-
-		<%= render 'follow_form'%>
-
-		<% if @user.microposts.any? %>
-		<%= render 'shared/micropost_form' %>
-
-		<h3>Microposts (<%= @user.microposts.count%>) </h3>
-		<ol class="microposts">
-			<%= render @microposts %>
-		</ol>
-		<%= will_paginate @microposts %>
-		<% end %>	
-	</div>
+	<div class="span12">
+		<div class="span5 offset1" id= "notes">
+			<h2 class="conv-title">Notes</h2>
+			<textarea class="form-control" rows="5" placeholder="Notes won't be saved for now..."></textarea>
+		</div>
+		<div class="span5" id= "conversation">
+			<h2 class="conv-title">Messages</h2>
+			<%= render 'shared/micropost_form' %>
+			<%= render 'shared/conversation' %>
+		</div>
 	</div>
 </div>
 <%else%>
-<div class="row">
-	<aside class="span6 notes">
-		<h2 class="conv-title">Notes</h2>
-	</aside>
-	<div class="span6 conversation">
-		<h2 class="conv-title">Messages</h2>
+<section>
+	<div class="row-fluid">
+		<h2 class="conv-title">Notes and messages</h2>
+		<div class="subtitle" style="text-align: center">Please sign in</div>
 	</div>
+</section>
 
+<%end%>
 
-	<%end%>
-
-	<div id="half-slider">
-		<ul class="slides">
-			<li>
-				<div class="img-theme show"></div>
-				<div class="flex-caption">
-					<h1 class="title">Efficient Messaging</h1>
-				</div>
-			</div>
-		</li>
-	</ul>
+<div id="half-slider">
+	<ul class="slides">
+		<li>
+			<div class="img-theme show"></div>
+			<div class="flex-caption"></div>
+		</div>
+	</li>
+</ul>
 </div>
+<script language="javascript" type="text/javascript">
+document.getElementById("input_to_be_loaded").focus();
+</script>
+
+<script>
+     $("#messageForm").submit(function(event) 
+     {
+         /* stop form from submitting normally */
+         event.preventDefault();
+
+         /* get some values from elements on the page: */
+         var $form = $( this ),
+             $submit = $form.find( 'button[type="commit"]' ),
+             content = $form.find( 'input[name="micropost[content]"]' ).val(),
+             recipient_id = $form.find( 'input[name="micropost[recipient_id]"]' ).val(),
+             url = $form.attr('action');
+
+         /* Send the data using post */
+         var posting = $.post( url, { 
+                           message: message_value, 
+                           recipient: recipient_value, 
+                       });
+
+         posting.done(function( data )
+         {/* Put the results in a div */
+             $( "#conversationResponse" ).html(data);
+         });
+    });
+</script>
 
 

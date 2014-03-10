@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
+  before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :following, :followers, :show]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,	 only: :destroy
   before_action :not_signed_in_user, only: [:new, :create]
@@ -20,7 +20,11 @@ class UsersController < ApplicationController
 
 	def show
     	@user = User.find(params[:id])
-    	@microposts = @user.microposts.paginate(page: params[:page])
+    	if signed_in? 
+    	@micropost = current_user.microposts.build
+    	@microposts = current_user.conversation(@user).paginate(page: params[:page])
+    	@conversation_items = current_user.conversation(@user).paginate(page: params[:page])
+    	end
   	end
 
 	def create

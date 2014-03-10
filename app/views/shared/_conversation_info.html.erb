@@ -1,9 +1,5 @@
 <div id= "conversation_info">
-	
 	<h3 class= "usernames">
-	<%= link_to gravatar_for(@user, size: 45), @user.name %> Between <%=@user.name%> (<%=@user.email%>) and <%= current_user.name %> (<%= current_user.email%>).
-	</h3>
-	<h3 class= "new-message-title">
-		<%= pluralize(current_user.microposts.count, "New micropost") %>
+	<%= link_to gravatar_for(@user, size: 45), @user.name %> With <%=@user.name%> (<%=@user.email%>).
 	</h3>
 </div>

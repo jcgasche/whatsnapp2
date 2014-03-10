@@ -29,6 +29,10 @@ class User < ActiveRecord::Base
     Micropost.from_users_followed_by(self)
   	end
 
+  	def conversation(other_user)
+  		Micropost.from_conversation_between(self, other_user)
+  	end
+
   	def following?(other_user)
   		relationships.find_by(followed_id: other_user.id)
   	end

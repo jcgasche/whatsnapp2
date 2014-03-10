@@ -3,26 +3,24 @@
 <% if signed_in? %>
 <% provide(:title, 'Home') %>
 
+<section>
+  <div class="row-fluid">
+    <h2 class="conv-title">Notes and messages</h2>
+    <div class="subtitle" style="text-align: center">Soon the home feed here.</div>
+    <div class="subtitle" style="text-align: center">Find a user in the "Users" menu and start messaging!</div>
 
-<div class="row">
-  <section>
-    <shared/conversation_info %>
-  </section>
-  <section>
-    <%= render 'shared/stats' %>
-  </section>
-  <div class="span6 notes">
-    <h2 class="conv-title">Notes</h2>
   </div>
+</section>
 
-  <div class="span6 conversation">
-    <h2 class="conv-title">Messages</h2>
-    <section>
-      <%= render 'shared/micropost_form' %>
-    </section>
-    <p>Micropost Feed</p>
-    <%= render 'shared/feed' %>
-  </div>
+
+<div id="half-slider">
+  <ul class="slides">
+    <li>
+      <div class="img-theme show"></div>
+      <div class="flex-caption"></div>
+    </div>
+  </li>
+</ul>
 </div>
 
 
