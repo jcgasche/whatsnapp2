@@ -84,15 +84,26 @@ p {
 }
 .navbar_logged_in{
   background-color: #00B2EE;
+  border-bottom: 4px solid #ffd95e
 }
 
 #logo {
   float: left;
   margin-right: 10px;
+  padding-top: 11px;
+  line-height: 1;
+  &:hover {
+    color: #1E90FF;
+    text-decoration: none;
+  }
+}
+#logo-text {
+  float: left;
+  margin-right: 10px;
   font-size: 1.7em;
   color: #FFF;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 7px;
   font-weight: bold;
   line-height: 1;
   &:hover {
@@ -108,7 +119,7 @@ p {
   font-size: 1.7em;
   color: #333;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 7px;
   font-weight: bold;
   line-height: 1;
   &:hover {
@@ -171,9 +182,9 @@ aside {
 }
 
 .gravatar {
-  float: left;
+  display: block;
   margin-right: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 .stats {

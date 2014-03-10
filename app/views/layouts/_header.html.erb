@@ -27,7 +27,9 @@
             </li>
           </ul>
           <% else %>
-          <%= link_to "WhatsNapp", root_path, id: "logo" %>  
+          
+          <%= link_to image_tag("red-maple-leaf-logo-small.png", alt: "logo"), root_path, id: "logo" %>
+          <%= link_to "WhatsNapp", root_path, id: "logo-text" %>  
           <ul class="nav" id= "slogan">
             <li> - Conversations with shared notes</li>
           </ul>    

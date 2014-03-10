@@ -1,7 +1,9 @@
 <footer id="footer">
+
+
   <div class="container">
     <div class="row">
-    <div class="col-xs-6 col-sm-2 col-md-2">
+      <div class="col-xs-6 col-sm-2 col-md-2">
       </div>
       <div class="col-xs-6 col-sm-2 col-md-2">
         <ul>
@@ -11,14 +13,14 @@
           <% if signed_in? %>
           <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
           <% else %>
-            <li><%= link_to "Sign up",   signup_path %></li>
-            <li><%= link_to "Sign in",   signin_path %></li>
-            <% end %>
-            <li><%= link_to "Apps",   "#" %></li>
+          <li><%= link_to "Sign up",   signup_path %></li>
+          <li><%= link_to "Sign in",   signin_path %></li>
+          <% end %>
+          <li><%= link_to "Apps",   "#" %></li>
         </ul>
       </div>
-<div class="col-xs-6 col-sm-1 col-md-1">
-</div>
+      <div class="col-xs-6 col-sm-1 col-md-1">
+      </div>
       
       
       <div class="col-xs-6 col-sm-2 col-md-2">
@@ -37,18 +39,18 @@
           </li>
         </ul>
       </div>
-<div class="col-xs-6 col-sm-1 col-md-1">
-</div>
-     
-     
+      <div class="col-xs-6 col-sm-1 col-md-1">
+      </div>
+
+
       <div class="col-xs-6 col-sm-2 col-md-2">
         <ul>
           <li class="header">
             Follow us
           </li>
-              <li>
-                <%= link_to image_tag("icon-facebook.png", alt: "Facebook"),   "https://www.facebook.com/WhatsNapp", target: "_blank" %>
-              </li>
+          <li>
+            <%= link_to image_tag("icon-facebook.png", alt: "Facebook"),   "https://www.facebook.com/WhatsNapp", target: "_blank" %>
+          </li>
         </ul>
       </div>
       <div class="col-xs-6 col-sm-2 col-md-2">
@@ -68,4 +70,5 @@
       </div>
     </div>
   </div>
+
 </footer>

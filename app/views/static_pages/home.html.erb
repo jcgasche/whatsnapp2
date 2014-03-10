@@ -2,35 +2,30 @@
 
 <% if signed_in? %>
 <% provide(:title, 'Home') %>
-<div id="half-slider">
-    <ul class="slides">
-      <li>
-        <div class="img-theme home_logged_in"></div>
-        <div class="flex-caption">
-          <h1 class="title">Efficient Messaging</h1>
-        </div>
-      </div>
-    </li>
-  </ul>
-</div>
+
 
 <div class="row">
-  <aside class="span4">
-    <section>
-      <%= render 'shared/user_info' %>
-    </section>
-    <section>
-      <%= render 'shared/stats' %>
-    </section>
+  <section>
+    <shared/conversation_info %>
+  </section>
+  <section>
+    <%= render 'shared/stats' %>
+  </section>
+  <div class="span6 notes">
+    <h2 class="conv-title">Notes</h2>
+  </div>
+
+  <div class="span6 conversation">
+    <h2 class="conv-title">Messages</h2>
     <section>
       <%= render 'shared/micropost_form' %>
     </section>
-  </aside>
-  <div class="span8">
-    <h3>Micropost Feed</h3>
+    <p>Micropost Feed</p>
     <%= render 'shared/feed' %>
   </div>
 </div>
+
+
 <% else %>
 <% provide(:title, 'Conversations with notes on the side') %>
 <section id="home">
@@ -65,7 +60,7 @@
     <div class="item">
       <div class="btn-circle active" id="btn-nav-home">
         <div class="inner">
-          <%= link_to image_tag("icon.png", alt: "Random"), root_path %>
+          <%= link_to image_tag("red-maple-leaf-logo.png", alt: "Random"), root_path %>
         </div>
       </div>
       <div class="btn-label">Home</div>
@@ -115,7 +110,7 @@
           <%= link_to image_tag("how-it-works-01.png", alt: "Random"), '' %>
         </div>
         <div class="col-xs-7 col-sm-8 col-md-9">
-          <h3 class="smart-edit" data-key="a10">Send messages like with any app, but simpler!</h3>
+          <h3 class="smart-edit" data-key="a10">Send messages like with any app!</h3>
           <div class="smart-edit" data-key="a20">
             Super simple, super secure! Unlike other apps, your messages won't disappear if you read them from your phone before reading them on your computer. Unlike other apps, we won't share or sell any information to bigger companies. 
           </div>
@@ -137,9 +132,9 @@
           <%= link_to image_tag("how-it-works-03.png", alt: "Random", class: "pull-left"), '' %>            
         </div>
         <div class="col-xs-7 col-sm-8 col-md-9">
-          <h3 class="smart-edit" data-key="a50">All that for free!</h3>
+          <h3 class="smart-edit" data-key="a50">It's free!</h3>
           <div class="smart-edit" data-key="a60">
-            We built this messaging system because we needed a more convenient way to exchange information. We will never charge anything for it.
+            We built this messaging system because our team needed a more convenient way to exchange information. We are constantly working on it to provide the best user experience, reliability, and security. In spite of that, we will never charge anything for it.
           </div>
         </div>
       </div>

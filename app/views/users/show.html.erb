@@ -1,39 +1,56 @@
 <% provide(:title, @user.name) %>
 
-<div id="half-slider">
-    <ul class="slides">
-      <li>
-        <div class="img-theme show"></div>
-        <div class="flex-caption">
-          <h1 class="title">Efficient Messaging</h1>
-        </div>
-      </div>
-    </li>
-  </ul>
+<% if signed_in? %>
+<div class="row">
+		<%= render 'shared/conversation_info' %>
 </div>
 
-<div class="row">
-	<aside class="span4">
-		<section>
-			<h1>
-				<%= gravatar_for @user %>
-				<%= @user.name %>
-			</h1>
-		</section>
-		<section>
-      		<%= render 'shared/stats' %>
-    	</section>
-	</aside>
-	<div class="span8">
-		<%= render 'follow_form' if signed_in? %>
+<div class="row-fluid">
+  <div class="span12">
+	<div class="span6" id= "notes">
+		<h2 class="conv-title">Notes</h2>
+		
+	</div>
+	<div class="span6" id= "conversation">
+		<h2 class="conv-title">Messages</h2>
+
+
+		<%= render 'follow_form'%>
+
 		<% if @user.microposts.any? %>
+		<%= render 'shared/micropost_form' %>
+
 		<h3>Microposts (<%= @user.microposts.count%>) </h3>
 		<ol class="microposts">
 			<%= render @microposts %>
 		</ol>
 		<%= will_paginate @microposts %>
-		<% end %>
+		<% end %>	
 	</div>
+	</div>
+</div>
+<%else%>
+<div class="row">
+	<aside class="span6 notes">
+		<h2 class="conv-title">Notes</h2>
+	</aside>
+	<div class="span6 conversation">
+		<h2 class="conv-title">Messages</h2>
+	</div>
+
+
+	<%end%>
+
+	<div id="half-slider">
+		<ul class="slides">
+			<li>
+				<div class="img-theme show"></div>
+				<div class="flex-caption">
+					<h1 class="title">Efficient Messaging</h1>
+				</div>
+			</div>
+		</li>
+	</ul>
 </div>
 
 
