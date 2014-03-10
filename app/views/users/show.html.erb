@@ -41,6 +41,30 @@
 document.getElementById("input_to_be_loaded").focus();
 </script>
 
+<script>
+     $("#messageForm").submit(function(event) 
+     {
+         /* stop form from submitting normally */
+         event.preventDefault();
 
+         /* get some values from elements on the page: */
+         var $form = $( this ),
+             $submit = $form.find( 'button[type="commit"]' ),
+             content = $form.find( 'input[name="micropost[content]"]' ).val(),
+             recipient_id = $form.find( 'input[name="micropost[recipient_id]"]' ).val(),
+             url = $form.attr('action');
+
+         /* Send the data using post */
+         var posting = $.post( url, { 
+                           message: message_value, 
+                           recipient: recipient_value, 
+                       });
+
+         posting.done(function( data )
+         {/* Put the results in a div */
+             $( "#conversationResponse" ).html(data);
+         });
+    });
+</script>
 
 
