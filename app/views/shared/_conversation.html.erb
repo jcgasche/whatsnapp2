@@ -4,7 +4,7 @@
 <%= will_paginate @conversation_items%>
 
 <% if @conversation_items.any? %>
-  <ol class="microposts" id="conversationResponse">
+  <ol class="microposts">
     <%= render partial: 'shared/conversation_item', collection: @conversation_items %>
   </ol>
   <%= will_paginate @conversation_items %>

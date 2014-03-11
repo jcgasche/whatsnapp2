@@ -61,12 +61,15 @@
 //-->
 </SCRIPT>
 </head>
-<body onLoad="document.forms.session.email.focus()">
+
+<body>
   <%= render 'layouts/header' %>
   
   <% flash.each do |key, value| %>
   <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %>
+
+
 
   <%= yield %>
   <%= render 'layouts/footer' %>
@@ -76,5 +79,10 @@
 
 
 
+  <script language="javascript" type="text/javascript">
+    document.getElementById("input_to_be_loaded").focus();
+  </script>
+
+  
 </body>
 </html>
