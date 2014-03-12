@@ -20,10 +20,10 @@ class UsersController < ApplicationController
 
 	def show
     	@user = User.find(params[:id])
+    	@recipient = User.find(params[:id])
     	if signed_in? 
     	@micropost = current_user.microposts.build
-    	@microposts = current_user.conversation(@user).paginate(page: params[:page])
-    	@conversation_items = current_user.conversation(@user).paginate(page: params[:page])
+    	@conversation_items = current_user.conversation(@user).paginate(page: params[:page], :per_page => 7)
     	end
   	end
 

@@ -13,8 +13,11 @@
 		</div>
 		<div class="span5" id= "conversation">
 			<h2 class="conv-title">Messages</h2>
+			<div  id= "message-form">
 			<%= render 'shared/micropost_form' %>
+			</div>
 			<%= render 'shared/conversation' %>
+			<%= will_paginate @conversation_items%>
 		</div>
 	</div>
 </div>
@@ -28,42 +31,40 @@
 
 <%end%>
 
-<div id="half-slider">
-	<ul class="slides">
-		<li>
-			<div class="img-theme show"></div>
-			<div class="flex-caption"></div>
-		</div>
-	</li>
-</ul>
-</div>
+
+
+<script TYPE="text/javascript">
+ $("#message-form").submit(function(event) 
+ {
+ 
+ /* get some values from elements on the page: */
+ var $form = $( this ),
+ $submit = $form.find( 'button[type="submit"]' ),
+ message_value = $form.find( 'input[name="micropost[content]"]' ).val(),
+ recipient_value = $form.find( 'input[name="recipient[recipient_id]"]' ).val(),
+ url = $form.attr('action');
+
+ /* Send the data using post */
+ var posting = $.post( url, { 
+ recipient_id: recipient_value, 
+ message: message_value 
+ });
+
+ posting.done(function( data )
+ {
+ /* Put the results in a div */
+ /* Change the button text. */
+
+ $commit.text('Sent');
+ $("#message-form").html("<%= escape_javascript(render('shared/micropost_form')) %>")
+ $message = $_POST['message'];
+			 $("#conversation-messages").html("<%= escape_javascript(render('shared/conversation')) %>")
+
+ });
+ });
 
 
 
-<script>
-     $("#messageForm").submit(function(event) 
-     {
-         /* stop form from submitting normally */
-         event.preventDefault();
-
-         /* get some values from elements on the page: */
-         var $form = $( this ),
-             $submit = $form.find( 'button[type="commit"]' ),
-             content = $form.find( 'input[name="micropost[content]"]' ).val(),
-             recipient_id = $form.find( 'input[name="micropost[recipient_id]"]' ).val(),
-             url = $form.attr('action');
-
-         /* Send the data using post */
-         var posting = $.post( url, { 
-                           message: message_value, 
-                           recipient: recipient_value, 
-                       });
-
-         posting.done(function( data )
-         {/* Put the results in a div */
-             $( "#conversationResponse" ).html(data);
-         });
-    });
 </script>
 
 

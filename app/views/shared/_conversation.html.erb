@@ -1,11 +1,11 @@
 
 
 
-<%= will_paginate @conversation_items%>
 
 <% if @conversation_items.any? %>
+<div id= "conversation-messages">
   <ol class="microposts">
     <%= render partial: 'shared/conversation_item', collection: @conversation_items %>
   </ol>
-  <%= will_paginate @conversation_items %>
+</div>
 <% end %>

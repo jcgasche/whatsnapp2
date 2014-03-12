@@ -41,6 +41,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
+
   <SCRIPT TYPE="text/javascript">
     <!--
     function submitenter(myfield,e)
@@ -58,8 +59,10 @@
      else
        return true;
    }
-//-->
-</SCRIPT>
+  //-->
+  </SCRIPT>
+
+<%= javascript_include_tag :defaults %>
 </head>
 
 <body>
@@ -83,6 +86,6 @@
     document.getElementById("input_to_be_loaded").focus();
   </script>
 
-  
+
 </body>
 </html>

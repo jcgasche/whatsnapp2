@@ -1,11 +1,12 @@
 
-<%= form_for(@micropost) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Press enter to send message", class: "form-control",  id: "input_to_be_loaded", onKeyPress: "return submitenter(this,event)" %>
-  </div>
-   <%= f.hidden_field :recipient_id, :value => @user.id %>
-  <%= f.submit "Send", class: "btn btn-info", style: "float: right;" %>
-  <span class="countdown"></span>
+<%= form_for(@micropost, remote: true, :method => :POST) do |f| %>
+<%= f.hidden_field :recipient_id, :value => @user.id %>
+
+<%= render 'shared/error_messages', object: f.object %>
+<div class="field">
+	<%= f.text_area :content, placeholder: "Press enter to send message", class: "form-control",  id: "input_to_be_loaded", onKeyPress: "return submitenter(this,event)" %>
+</div>
+<span class="countdown"></span>
+<%= f.submit "Send", class: "btn btn-info", style: "float: right;" %>
 <% end %>
 

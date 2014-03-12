@@ -1,29 +1,47 @@
 <% provide(:title, 'Sign up')%>
 
-<h1>Sign up</h1>
+<section>
+	<div class="row-fluid">
+		<h2 class="conv-title" style="margin-bottom:25px">Sign Up :)</h2>
+		<div class= "subtitle" style= "text-align: center"></div>
+		<div class="span4 offset4">
+			<%= form_for(@user) do |f|%>
+			<%= render 'shared/error_messages', object: f.object %>
 
+			<%= f.label :name %>
+			<%= f.text_field :name , class: "form-control"%>
 
-<div class="row">
-	<div class="span6 offset3">
-		<%= form_for(@user) do |f|%>
-		<%= render 'shared/error_messages', object: f.object %>
+			<%= f.label :email %>
+			<%= f.text_field :email, class: "form-control"%>
 
-		<%= f.label :name %>
-		<%= f.text_field :name %>
+			<%= f.label :password %>
+			<%= f.password_field :password , class: "form-control"%>
 
-		<%= f.label :email %>
-		<%= f.text_field :email%>
+			<%= f.label :password_confirmation, "Confirmation" %>
+			<%= f.password_field :password_confirmation , class: "form-control"%>
+			<div class= "subtitle" style= "text-align: center; margin-top:15px">As simple as that.</div>
+			<%= f.submit "Create my account", class: "btn btn-signup" %>
+			<% end %>
 
-		<%= f.label :password %>
-		<%= f.password_field :password%>
+			
 
-		<%= f.label :password_confirmation, "Confirmation" %>
-		<%= f.password_field :password_confirmation%>
-
-		<%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-		<% end %>
+		</div>
 	</div>
+</section>
+
+
+<div id="half-slider">
+	<ul class="slides">
+		<li>
+			<div class="img-theme show"></div>
+			<div class="flex-caption"></div>
+		</div>
+	</li>
+</ul>
 </div>
+
+
+
 
 
 
