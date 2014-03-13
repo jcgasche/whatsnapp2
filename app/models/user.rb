@@ -26,11 +26,15 @@ class User < ActiveRecord::Base
 	end
 
 	def feed
-    Micropost.from_users_followed_by(self)
+    	Micropost.from_users_followed_by(self)
   	end
 
   	def conversation(other_user)
   		Micropost.from_conversation_between(self, other_user)
+  	end
+
+  	def notes(other_user)
+  		Micropost.notes_between(self, other_user)
   	end
 
   	def following?(other_user)
@@ -38,8 +42,21 @@ class User < ActiveRecord::Base
   	end
 
   	def follow!(other_user)
+  		if relationships.find_by(followed_id: other_user.id)
+  		elsif other_user.relationships.find_by(followed_id: self.id)
+  		else
   		relationships.create!(followed_id: other_user.id)
+  		end
   	end
+
+  	def relationship_with(other_user)
+      if relationships.find_by(followed_id: other_user.id)
+      	relationships.find_by(followed_id: other_user.id)
+  		elsif other_user.relationships.find_by(followed_id: self.id)
+  			other_user.relationships.find_by(followed_id: self.id)
+  		else
+  		end
+    end
 
   	def unfollow!(other_user)
   		relationships.find_by(followed_id: other_user.id).destroy

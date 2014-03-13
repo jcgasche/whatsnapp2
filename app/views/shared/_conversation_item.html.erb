@@ -2,15 +2,18 @@
 <li class= "sent" id="<%= conversation_item.id %>">
 <%elsif false %>
 <li class= "new" id="<%= conversation_item.id %>">
-<% conversation_item.new = false %>
+<% conversation_item.has_been_read %>
 <%else%>
 <li class= "received" id="<%= conversation_item.id %>">
 <%end%>
     <span class="content"><%= conversation_item.content %></span>
     <span class="timestamp"><%= time_ago_in_words(conversation_item.created_at) %> ago.</span>
   <% if current_user?(conversation_item.user) %>
+    <%= link_to "pin this to the notes", conversation_item, remote: true, style: "color:#00B2EE;" %>
+
     <%= link_to "delete", conversation_item, method: :delete,
                                      data: { confirm: "You sure?" },
                                      title: conversation_item.content %>
+
   <% end %>
 </li>

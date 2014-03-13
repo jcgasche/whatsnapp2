@@ -18,11 +18,14 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
+  	
+
 	def show
     	@user = User.find(params[:id])
     	@recipient = User.find(params[:id])
     	if signed_in? 
     	@micropost = current_user.microposts.build
+    	@notes_item = current_user.notes(@user)
     	@conversation_items = current_user.conversation(@user).paginate(page: params[:page], :per_page => 7)
     	end
   	end
@@ -31,8 +34,8 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			sign_in @user
-			flash[:success] = "Welcome to the Sample App!"
-     		redirect_to @user
+			flash[:success] = "Welcome to WhatsNapp!"
+     		redirect_to root_url
   		else
   		render 'new'
   		end

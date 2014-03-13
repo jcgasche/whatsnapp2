@@ -1,6 +1,10 @@
 <li>
   <%= gravatar_for user, size: 52 %>
-  <%= link_to user.name, user %>
+	<%= form_for(current_user.relationships.build(followed_id: user.id)) do |f| %>
+	  <div><%= f.hidden_field :followed_id %></div>
+	  <%= f.submit user.name, class: "btn btn-large btn-info" %>
+	<% end %>
+
   <% if current_user.admin? && !current_user?(user) %>
   	<%= link_to "delete", user, method: :delete, data: { confirm: "You sure?"} %>
   	<% end %>

@@ -6,6 +6,7 @@
     <%= link_to "delete", micropost, method: :delete,
                                      data: { confirm: "You sure?" },
                                      title: micropost.content %>
+    <%= link_to "pin this to the notes", micropost, remote: true, style: "color:#00B2EE;" %>
   <% end %>
 </li>
 
