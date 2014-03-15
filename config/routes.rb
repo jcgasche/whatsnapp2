@@ -14,6 +14,10 @@ SampleApp::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#home'
   
+  match '/aureline',    to: 'static_pages#aureline',    via: 'get'
+  match '/charles',    to: 'static_pages#charles',    via: 'get'
+  match '/amaury',    to: 'static_pages#help',    via: 'get'
+  match '/other',    to: 'static_pages#other',    via: 'get'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'

@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     	@recipient = User.find(params[:id])
     	if signed_in? 
     	@micropost = current_user.microposts.build
-    	@notes_item = current_user.notes(@user)
+    	@notes_item = current_user.notes(@user).first
     	@conversation_items = current_user.conversation(@user).paginate(page: params[:page], :per_page => 7)
     	end
   	end
