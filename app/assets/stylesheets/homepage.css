@@ -1,5 +1,5 @@
-h1 {color:#000;font-weight:400 !important;}
-h1 a {color:#2dac91;font-weight:550 !important;}
+h1 {color:#000;font-weight:100 !important;}
+h1 a {color:#00B2EE; font-size: 150px; font-weight:100  !important;}
 #slogan {font-size: 16px;
     color:#AAA;
     margin-top:17px;
@@ -21,7 +21,7 @@ h1 a {color:#2dac91;font-weight:550 !important;}
 h2 {color:#AAA;font-weight:300 !important;font-size:64px !important;}
 
 #how-it-works {color:#8B8682 !important;font-size:13px !important;line-height:20px;}
-#how-it-works h3 {color:#FF7F50 !important;font-size:28px !important;line-height:30px !important;font-weight:500 !important;margin:0 0 20px 0;}
+#how-it-works h3 {color:#00B2EE !important;font-size:28px !important;line-height:30px !important;font-weight:500 !important;margin:0 0 20px 0;}
 #how-it-works {background-color:#eff0ea;}
 #how-it-works .container {max-width:800px;}
 #how-it-works .container .row {margin-top:40px;margin-bottom:40px;}
@@ -57,17 +57,24 @@ h2 {color:#AAA;font-weight:300 !important;font-size:64px !important;}
 .conversation {
     max-height: 200px
 }
-.conv-title {
-    color:#ffc403;
-    margin-bottom:10px;
-    margin-top:10px;margin-left:5px;margin-right:5px;
-}
+
 
 #compose_message{margin-bottom:10px;
     margin-top:10px;margin-left:5px;margin-right:5px;
 }
 
+#intown {background-color: #000; color:#fff;}
+#intown .intown-title {background-color: #000; font-size: 35px;font-weight: 300; color:#fff;}
+#intown .intown-text {background-color: #000; color:#ddd; font-size: 20px; font-weight: 200; line-height: 27px;}
 
+#onesnap {background-color: #fff; color:#fff;}
+#onesnap .onesnap-title {background-color: #fff; font-size: 35px;font-weight: 200; color:#000;}
+#onesnap .onesnap-text {background-color: #fff; color:#aaa; font-size: 17px; font-weight: 100; line-height: 25px; margin-bottom: 50px;}
+
+#aureline-overview {background-color: #ffd95e; color:#fff;}
+#aureline-overview .aureline-overview-title {background-color: #ffd95e; font-size: 105px;font-weight: 600; color:#fff; margin-bottom: 55px;}
+#aureline-overview .aureline-overview-text {background-color: #ffd95e; color:#fff; font-size: 20px; 
+    font-weight: 300; line-height: 27px; padding-left: 15px; padding-right: 25px; text-align: justify}
 
 
 

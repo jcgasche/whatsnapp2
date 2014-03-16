@@ -24,15 +24,6 @@
   </div>
 </div>
 
-<div id="half-slider">
-  <ul class="slides">
-    <li>
-      <div class="img-theme show"></div>
-      <div class="flex-caption"></div>
-    </div>
-  </li>
-</ul>
-</div>
 
 
 <% else %>
@@ -46,7 +37,7 @@
         <div class="img-theme home"></div>
         <div class="flex-caption">
           <h1 class="title">Efficient Messaging</h1>
-          <h1 class="brand"><%= link_to "WhatsNapp", signup_path %></h1>
+          <h1><%= link_to "WhatsNapp.co", signup_path %></h1>
           <div class="caption">
             Conversations with notes on the side to keep an eye on the essential.
             No data shared with Facebook, Google or the NSA. Ever.
@@ -69,7 +60,7 @@
     <div class="item">
       <div class="btn-circle active" id="btn-nav-home">
         <div class="inner">
-          <%= link_to image_tag("red-maple-leaf-logo.png", alt: "Random"), root_path %>
+          <%= link_to image_tag("blue-maple-leaf-logo.png", alt: "Random"), root_path %>
         </div>
       </div>
       <div class="btn-label">Home</div>
@@ -112,7 +103,7 @@
 
 <div id="wrapper">
 
-  <section id="how-it-works">
+  <section id="how-it-works" style="background-color: #ffdf6f">
     <div class="container">
       <div class="row">
         <div class="col-xs-5 col-sm-4 col-md-3">
@@ -121,7 +112,7 @@
         <div class="col-xs-7 col-sm-8 col-md-9">
           <h3 class="smart-edit" data-key="a10">Send messages like with any app!</h3>
           <div class="smart-edit" data-key="a20">
-            Super simple, super secure! Unlike other apps, your messages won't disappear if you read them from your phone before reading them on your computer. Unlike other apps, we won't share or sell any information to bigger companies. 
+            Super simple, super secure! Unlike with other apps, your messages won't disappear if you read them from your phone before reading them on your computer. Unlike other apps, we won't share or sell any information to bigger companies. 
           </div>
         </div>
       </div>
@@ -173,8 +164,29 @@
 
               </div>
               <div class="field">
-                <textarea class="form-control-notes" id="micropost_content" name="micropost[content]" rows="10">
-                  This is my favourite recipe!</textarea>
+                <textarea class="form-control-notes" id="micropost_content" name="micropost[content]" rows="10">Pinned yesterday:
+So here is what we have to do for this week end:
+- Write the report about China growth
+- Send the e-mail about the new article to Bill
+- Book the tickets for New York
+
+
+
+Techcrunch.com <-- awesome website where with crispy news!
+
+
+
+Ask Grandma about her pancake recipe for Sunday's brunch
+
+
+
+
+
+
+
+
+
+                </textarea>
                 </div>
                 <input class="btn btn-info btn-block" name="commit" style="float: right; " type="submit" value="Save" />
 
@@ -190,8 +202,7 @@
             <form accept-charset="UTF-8" action="" class="new_micropost" id="new_micropost" >
               <div style="margin:0;padding:0;display:inline">
                 <div class="field">
-                <textarea id="form-control-messages-home" name="micropost[content]" placeholder="Press enter to send message">
-                  </textarea>
+                  <textarea id="form-control-messages-home" name="micropost[content]" placeholder="Press enter to send message"></textarea>
                 </div>
                 <span class="countdown"></span>
                 <input class="btn btn-info" name="commit" style="float: right;" type="submit" value="Send" />
@@ -201,28 +212,75 @@
 
             <div id= "conversation-messages">
               <ol class="microposts">
+
+
                 <li class= "sent" id="10">
-                  <span class="content">Good and you?</span>
+                  <span class="content">Great! Don't forget that neither! ;)</span>
                   <span class="timestamp">1 minute ago.</span>
                   <a style="color:#00B2EE;">pin this to the notes</a>
-
                   <a style= "font-size:10px; color: #B0171F;">delete</a>
+                </li>
 
-                </li><li class= "received" id="9">
-                <span class="content">How are you doing?</span>
-                <span class="timestamp">2 minutes ago.</span>
-              </li>
-            </ol>
+
+                <li class= "received" id="9">
+                  <span class="content">I also have to ask him about this week's article.</span>
+                  <span class="timestamp">2 minutes ago.</span>
+                </li>
+
+
+                <li class= "received" id="9">
+                  <span class="content">Not yet! But has a meeting until in one hour, I'll note this to remember!</span>
+                  <span class="timestamp">2 minutes ago.</span>
+                </li>
+
+                <li class= "sent" id="10">
+                  <span class="content">did you ask Bill if he could come already?</span>
+                  <span class="timestamp">3 minutes ago.</span>
+                  <a style="color:#00B2EE;">pin this to the notes</a>
+                  <a style= "font-size:10px; color: #B0171F;">delete</a>
+                </li>
+
+                <li class= "sent" id="10">
+                  <span class="content">I pinned the list of things we need to do before we start to organize the brunch</span>
+                  <span class="timestamp">3 minutes ago.</span>
+                  <a style="color:#00B2EE;">pin this to the notes</a>
+                  <a style= "font-size:10px; color: #B0171F;">delete</a>
+                </li>
+
+                 <li class= "received" id="9">
+                  <span class="content">By what should we start?</span>
+                  <span class="timestamp">5 minutes ago.</span>
+                </li>
+
+                <li class= "received" id="9">
+                  <span class="content">"Supergood"?? I'm really exited to finally get this work done!</span>
+                  <span class="timestamp">6 minutes ago.</span>
+                </li>
+
+
+                <li class= "sent" id="10">
+                  <span class="content">Supergood and you? :)</span>
+                  <span class="timestamp">6 minutes ago.</span>
+                  <a style="color:#00B2EE;">pin this to the notes</a>
+                  <a style= "font-size:10px; color: #B0171F;">delete</a>
+                </li>
+
+                <li class= "received" id="9">
+                  <span class="content">How is it going this morning?</span>
+                  <span class="timestamp">8 minutes ago.</span>
+                </li>
+
+              </ol>
+            </div>
+
           </div>
-
         </div>
       </div>
-    </div>
 
 
 
-  </section>
+    </section>
 
-</div>
+  </div>
 
-<% end %>
+  <% end %>

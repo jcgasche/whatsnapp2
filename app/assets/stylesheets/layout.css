@@ -2,17 +2,7 @@ section {padding-top:80px;padding-bottom:80px;}
 #wrapper { display:block; padding:0; width:100% !important; }
 #header ul {list-style-type:none;}
 #header .navbar-header {height:60px !important;}
-#header .lang {position:absolute;right:10px;top:15px;cursor:pointer;font-size:11px;vertical-align:middle;color:#77787b;}
-#header .brand {
-    background:url('/images/airhelp-logo-white.png') no-repeat center scroll;
-    width:205px;
-    height:60px;
-    vertical-align:middle;
-    color: #fff;
-    text-indent: -9999px !important;
-    display:block;
-    text-decoration: none;
-}
+
 #header {
     background-color: transparent;
     position: absolute;
@@ -89,33 +79,14 @@ section {padding-top:80px;padding-bottom:80px;}
 #header.active .navbar-nav li.delimiter {padding:0 !important;margin:4px 0 !important;width:2px;height:22px;border-right:1px solid #c8cac6;}
 #header.active .navbar-nav a:hover {background-color: #efefef;}
 #header.active .navbar-nav.navbar-left{display:block !important;}
-#header.active .brand {background:url('rails.png') no-repeat center scroll !important;width:130px !important;}
 #header.active .fa-bars {color:#666 !important;font-size:21px;}
-#header.active a.start-claim {background-color: #2dac91 !important;padding:4px 16px !important;color:#fff !important;display:block !important;}
-#header.active a.start-claim:hover {background-color: #2dac91 !important;}
+#header.active a.start-claim {background-color: #00B2EE !important;padding:4px 16px !important;color:#fff !important;display:block !important;}
+#header.active a.start-claim:hover {background-color: #00B2EE !important;}
 #header .container {padding-top:0 !important;padding-bottom:0 !important;}
 
 #lang i {margin-left:5px;margin-right:5px;font-size:16px;}
 #lang span {font-size:11px;vertical-align:middle;}
 #lang span.icon-caret-down {font-size:16px;vertical-align:middle;margin-left:4px;}
-#header .langs {
-    position: absolute;
-    right:10px;top:60px;
-    display:none;
-    background-color:#fff;
-    z-index:999;
-    padding:5px 0px !important;
-    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.15);
-    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.15);
-}
-#header.active .langs {
-    position: absolute;
-    right:49px;top:60px;
-}
-#header .langs li {text-align:left;}
-#header .langs li a {padding:5px 8px !important;display:block;width:135px;color:#666;font-size:13px}
-#header .langs li a:hover {background-color:#2dac91 !important;color:#fff !important;}
 
 #home {
     position:relative;
@@ -153,17 +124,17 @@ section {padding-top:80px;padding-bottom:80px;}
 
 
 
-#footer {background:#e4e5e0;padding:0;position:relative;}
+#footer {background:#ffd95e;padding:0;position:relative;}
 #footer ul{list-style:none;width:auto;margin:0;padding:0;}
 #footer ul.follow-us li {float:left;margin:5px;opacity:0.9;}
 #footer ul.follow-us li:hover {opacity:1;}
 
-#footer ul li.header{font-weight:500;color:#666;font-size:18px;line-height:19px;height:48px;margin-bottom:10px;}
-#footer ul li, footer ul li a{color:#FF7F50;padding:4px 0;font-size:12px;font-weight:400;line-height:13px;}
+#footer ol li.header{font-weight:500;color:#666;font-size:18px;line-height:19px;height:48px;margin-bottom:10px;}
+#footer ol li, footer ol li a{color:#00B2EE;padding:4px 0;font-size:12px;font-weight:400;line-height:13px; list-style-type: none;}
 
 #footer > .container > .row {padding-top: 30px;padding-bottom: 50px;}
 #footer .container {padding-top:15px !important;padding-bottom:15px !important;}
-#footer .copyrights {min-height:80px;border-top:2px solid #fff;background:#eff0ec;font-size:11px;line-height:12px;color:#FF7F50;}
+#footer .copyrights {min-height:80px;border-top:2px solid #fff;background:#ffd95e;font-size:11px;line-height:12px;color:#00B2EE;}
 #footer .cp-label {padding:20px 15px 0px 15px;}
 
 

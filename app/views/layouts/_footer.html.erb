@@ -3,10 +3,8 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-xs-6 col-sm-2 col-md-2">
-      </div>
-      <div class="col-xs-6 col-sm-2 col-md-2">
-        <ul>
+      <div class="col-xs-6 col-sm-2 col-md-3">
+        <ol>
           <li class="header">
             Our products 
           </li>
@@ -17,14 +15,23 @@
           <li><%= link_to "Sign in",   signin_path %></li>
           <% end %>
           <li><%= link_to "Apps",   "#" %></li>
-        </ul>
+        </ol>
       </div>
-      <div class="col-xs-6 col-sm-1 col-md-1">
+      
+      <div class="col-xs-6 col-sm-2 col-md-3">
+        <ol>
+          <li class="header">
+            Our team 
+          </li>
+          <li><%= link_to "Charles", charles_path %></li>
+          <li><%= link_to "Lily",   aureline_path %></li>
+          <li><%= link_to "Amaury",   amaury_path %></li>
+        </ol>
       </div>
       
       
-      <div class="col-xs-6 col-sm-2 col-md-2">
-        <ul>
+      <div class="col-xs-6 col-sm-2 col-md-3">
+        <ol>
           <li class="header">
             Support
           </li>
@@ -37,23 +44,21 @@
           <li>
             <%= link_to "Contact",   contact_path %>
           </li>
-        </ul>
-      </div>
-      <div class="col-xs-6 col-sm-1 col-md-1">
+        </ol>
       </div>
 
 
-      <div class="col-xs-6 col-sm-2 col-md-2">
-        <ul>
+      <div class="col-xs-6 col-sm-2 col-md-3">
+        <ol>
           <li class="header">
             Follow us
           </li>
           <li>
             <%= link_to image_tag("icon-facebook.png", alt: "Facebook"),   "https://www.facebook.com/WhatsNapp", target: "_blank" %>
           </li>
-        </ul>
+        </ol>
       </div>
-      <div class="col-xs-6 col-sm-2 col-md-2">
+      <div class="col-xs-0 col-sm-2 col-md-1">
       </div>
 
     </div>
@@ -72,3 +77,6 @@
   </div>
 
 </footer>
+
+
+
