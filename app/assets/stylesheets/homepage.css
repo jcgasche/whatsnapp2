@@ -74,9 +74,12 @@ h2 {color:#AAA;font-weight:300 !important;font-size:64px !important;}
 #aureline-overview {background-color: #ffd95e; color:#fff;}
 #aureline-overview .aureline-overview-title {background-color: #ffd95e; font-size: 105px;font-weight: 600; color:#fff; margin-bottom: 55px;}
 #aureline-overview .aureline-overview-text {background-color: #ffd95e; color:#fff; font-size: 20px; 
-    font-weight: 300; line-height: 27px; padding-left: 15px; padding-right: 25px; text-align: justify}
+    font-weight: 310; line-height: 27px; padding-left: 15px; padding-right: 25px; text-align: justify}
 
-
+#charles-overview {background-color: #ffd95e; color:#fff;}
+#charles-overview .charles-overview-title {background-color: #ffd95e; font-size: 105px;font-weight: 600; color:#fff; margin-bottom: 55px;}
+#charles-overview .charles-overview-text {background-color: #ffd95e; color:#666; font-size: 20px; 
+    font-weight: 310; line-height: 27px; padding-left: 15px; padding-right: 25px; text-align: justify}
 
 
 
