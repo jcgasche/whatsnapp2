@@ -71,15 +71,26 @@ h2 {color:#AAA;font-weight:300 !important;font-size:64px !important;}
 #onesnap .onesnap-title {background-color: #fff; font-size: 35px;font-weight: 200; color:#000;}
 #onesnap .onesnap-text {background-color: #fff; color:#aaa; font-size: 17px; font-weight: 100; line-height: 25px; margin-bottom: 50px;}
 
+#camera-case {background-color: #000; color:#fff;}
+#camera-case .camera-case-title {background-color: #000; font-size: 35px;font-weight: 300; color:#fff;}
+#camera-case .camera-case-text {background-color: #000; color:#ddd; font-size: 20px; font-weight: 200; line-height: 27px; ; text-align: justify}
+
+
 #aureline-overview {background-color: #ffd95e; color:#fff;}
 #aureline-overview .aureline-overview-title {background-color: #ffd95e; font-size: 105px;font-weight: 600; color:#fff; margin-bottom: 55px;}
 #aureline-overview .aureline-overview-text {background-color: #ffd95e; color:#fff; font-size: 20px; 
+    font-weight: 310; line-height: 27px; padding-left: 15px; padding-right: 25px; text-align: justify}
+
+#amaury-overview {background-color: #ffd95e; color:#fff;}
+#amaury-overview .amaury-overview-title {background-color: #ffd95e; font-size: 105px;font-weight: 600; color:#fff; margin-bottom: 55px;}
+#amaury-overview .amaury-overview-text {background-color: #ffd95e; color:#fff; font-size: 20px; 
     font-weight: 310; line-height: 27px; padding-left: 15px; padding-right: 25px; text-align: justify}
 
 #charles-overview {background-color: #ffd95e; color:#fff;}
 #charles-overview .charles-overview-title {background-color: #ffd95e; font-size: 105px;font-weight: 600; color:#fff; margin-bottom: 55px;}
 #charles-overview .charles-overview-text {background-color: #ffd95e; color:#666; font-size: 20px; 
     font-weight: 310; line-height: 27px; padding-left: 15px; padding-right: 25px; text-align: justify}
+
 
 
 

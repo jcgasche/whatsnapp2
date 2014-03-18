@@ -16,7 +16,7 @@ SampleApp::Application.routes.draw do
   
   match '/aureline',    to: 'static_pages#aureline',    via: 'get'
   match '/charles',    to: 'static_pages#charles',    via: 'get'
-  match '/amaury',    to: 'static_pages#help',    via: 'get'
+  match '/amaury',    to: 'static_pages#amaury',    via: 'get'
   match '/other',    to: 'static_pages#other',    via: 'get'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
