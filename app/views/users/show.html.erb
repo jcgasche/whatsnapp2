@@ -1,4 +1,9 @@
+
+
 <% provide(:title, @user.name) %>
+
+
+
 
 <% if signed_in? %>
 <div class="row-fluid">
@@ -14,7 +19,7 @@
 		<div class="span5" id= "conversation">
 			<h2 class="conv-title">Messages</h2>
 			<div  id= "message-form">
-			<%= render 'shared/micropost_form' %>
+				<%= render 'shared/micropost_form' %>
 			</div>
 			<%= render 'shared/conversation' %>
 			<%= will_paginate @conversation_items%>
@@ -34,34 +39,36 @@
 
 
 <script TYPE="text/javascript">
- $("#message-form").submit(function(event) 
- {
- 
- /* get some values from elements on the page: */
- var $form = $( this ),
- $submit = $form.find( 'button[type="submit"]' ),
- message_value = $form.find( 'input[name="micropost[content]"]' ).val(),
- recipient_value = $form.find( 'input[name="recipient[recipient_id]"]' ).val(),
- url = $form.attr('action');
 
- /* Send the data using post */
- var posting = $.post( url, { 
- recipient_id: recipient_value, 
- message: message_value 
- });
 
- posting.done(function( data )
- {
- /* Put the results in a div */
- /* Change the button text. */
+	$("#message-form").submit(function sendmessage(event) 
+	{
 
- $commit.text('Sent');
- $("#message-form").html("<%= escape_javascript(render('shared/micropost_form')) %>")
- $message = $_POST['message'];
-			 $("#conversation-messages").html("<%= escape_javascript(render('shared/conversation')) %>")
+		/* get some values from elements on the page: */
+		var $form = $( this ),
+		$submit = $form.find( 'button[type="submit"]' ),
+		message_value = $form.find( 'input[name="micropost[content]"]' ).val(),
+		recipient_value = $form.find( 'input[name="recipient[recipient_id]"]' ).val(),
+		url = $form.attr('action');
 
- });
- });
+		/* Send the data using post */
+		var posting = $.post( url, { 
+			recipient_id: recipient_value, 
+			message: message_value 
+		});
+
+		posting.done(function( data )
+		{
+			/* Put the results in a div */
+			/* Change the button text. */
+
+			$commit.text('Sent');
+			$("#message-form").html("<%= escape_javascript(render('shared/micropost_form')) %>")
+			$message = $_POST['message'];
+			$("#conversation-messages").html("<%= escape_javascript(render('shared/conversation')) %>")
+
+		});
+	});
 
 
 

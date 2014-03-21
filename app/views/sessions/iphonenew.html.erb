@@ -1,0 +1,7 @@
+<% provide(:title, "Sign in") %>
+
+<%= form_for(:session, url: sessions_path) do |f| %>
+<%= f.text_field :email , class: "form-control",  id: "input_to_be_loaded"%>
+<%= f.password_field :password , class: "form-control"%>
+<%= f.submit "Sign in", class: "btn btn-large btn-info" %>
+<% end %>
