@@ -29,6 +29,7 @@ $(document).ready(function() {
         recipient_id: recipient_value,
         content: message_value
       });
+      $("#message-form").form.submit();
       $('#input_to_be_loaded').css('background-color','#f00');
 
       $('#input_to_be_loaded').html("");

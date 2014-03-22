@@ -5,7 +5,7 @@
 
 <%= render 'shared/error_messages', object: f.object %>
 <div class="field">
-	<%= f.text_area :content, placeholder: "Press enter to send message", value: "",class: "form-control-messages",  id: "input_to_be_loaded", onkeypress="return submitenter(this,event)" %>
+	<%= f.text_area :content, placeholder: "Press enter to send message", value: "",class: "form-control-messages",  id: "input_to_be_loaded", onKeyPress: "return submitenter(this,event)" %>
 </div>
 <span class="countdown"></span>
 <%= f.submit "Send", class: "btn btn-info", style: "float: right;" %>
