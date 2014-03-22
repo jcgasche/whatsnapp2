@@ -1,5 +1,5 @@
 
-<%= form_for(@micropost, remote: true, :method => :POST), id: "sign-in-form" do |f| %>
+<%= form_for(@micropost, remote: true, :method => :POST) do |f| %>
 <%= f.hidden_field :recipient_id, :value => @user.id %>
 <%= f.hidden_field :is_note, value: false %>
 

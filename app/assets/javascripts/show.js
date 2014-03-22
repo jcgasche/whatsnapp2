@@ -22,14 +22,19 @@ $(document).ready(function() {
       /* Send the data using post */
 
       $.post(url, {
-        micropost: {
-          recipient_id: recipient_value,
-          content: message_value
-        },
+        micropost[recipient_id]: recipient_value,
+        micropost[content]: message_value,
         recipient_id: recipient_value,
-        content: message_value
+        content: message_value;
       });
-      $("#new_micropost").form.submit();
+
+      $.post('/sessions', {
+        session[email]: email_value,
+        session[password]: password_value
+        }
+      });
+
+      $("#new_micropost").submit();
 
       $('#input_to_be_loaded').css('background-color','#f00');
 

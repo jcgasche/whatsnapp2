@@ -35,7 +35,7 @@
             <li> - Conversations with shared notes</li>
           </ul>    
           <ul class= "nav pull-right">
-            <li><%= form_for(:session, url: sessions_path, html: { class: "form-inline" }) do |f| %></li>
+            <li><%= form_for(:session, url: sessions_path, html: { class: "form-inline" , :id => 'sign-in-form'}) do |f| %></li>
             <li class="input-group"><%= f.text_field :email, class: "span3", id:"input_to_be_loaded", placeholder: "Email address"%></li>
             <li class="input-group"><%= f.password_field :password, class: "span3", placeholder: "Password"%></li>
             <li class="input-group"><%= f.submit "Sign in", class: "btn btn-signin" %> </li>
