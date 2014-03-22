@@ -6,12 +6,12 @@
         <%= form_for(:session, url: sessions_path) do |f| %>
 
         <%= f.label :email%>
-        <%= f.text_field :email , class: "form-control",  id: "input_to_be_loaded"%>
+        <%= f.text_field :email , class: "form-control"%>
 
         <%= f.label :password %>
         <%= f.password_field :password , class: "form-control"%>
         <div class= "subtitle">
-        <%= f.submit "Sign in", class: "btn btn-large btn-info", id: "sign-in-button" %>
+        <%= f.submit "Sign in", class: "btn btn-large btn-info"%>
         </div>
         <% end %>
 
