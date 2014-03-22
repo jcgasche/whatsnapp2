@@ -23,7 +23,7 @@ $(document).ready(function() {
 
       $.post(url, {
         recipient_id: recipient_value,
-        content: message_value;
+        content: message_value
       });
 
       $("#new_micropost").submit();
