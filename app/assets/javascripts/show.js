@@ -13,7 +13,7 @@ $(document).ready(function() {
 
       event.preventDefault();
 
-      var $form = $("#message-form"),
+      var $form = $("#new_micropost"),
       $submit = $form.find('button[type="submit"]'),
       message_value = $form.find('input[name="micropost[content]"]').val(),
       recipient_value = $form.find('input[name="recipient[recipient_id]"]').val(),
@@ -29,7 +29,8 @@ $(document).ready(function() {
         recipient_id: recipient_value,
         content: message_value
       });
-      $("#message-form").form.submit();
+      $("#new_micropost").form.submit();
+
       $('#input_to_be_loaded').css('background-color','#f00');
 
       $('#input_to_be_loaded').html("");
