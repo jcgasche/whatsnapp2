@@ -22,7 +22,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
-  
+
 <script TYPE="text/javascript">
 $(function() {
     // there's the conversation-messages and the notes
@@ -51,7 +51,6 @@ $(function() {
 </script>
 
   <SCRIPT TYPE="text/javascript">
-    <!--
     function submitenter(myfield,e)
     {
       var keycode;
@@ -61,26 +60,12 @@ $(function() {
 
       if (keycode == 13)
       {
-       var $form = $("#message-form"),
-      $submit = $form.find('button[type="submit"]'),
-      message_value = $form.find('input[name="micropost[content]"]').val(),
-      recipient_value = $form.find('input[name="recipient[recipient_id]"]').val(),
-      url = '/microposts';
-
-      /* Send the data using post */
-
-      $.post(url, {
-        recipient_id: recipient_value,
-        content: message_value
-      });
+       myfield.form.submit();
        return false;
      }
      else
        return true;
    }
-
-
-
   </SCRIPT>
 
 <%= javascript_include_tag :defaults %>

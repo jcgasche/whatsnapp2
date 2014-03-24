@@ -295,6 +295,39 @@ input[type="password"], input[type="password"] {
     width: 100% !important;
 }
 
+.btn-user {
+    outline: 0;
+    border:0;
+    background-color: #fff;
+    width:auto !important;
+    min-width: 100px;
+    margin:5px auto 10px auto;
+    padding:10px 10px;
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    color:#ffc403;
+    position: relative;
+    text-align: left;
+    float: left;
+    -moz-transition: all 400ms ease;
+    -webkit-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
+}
+
+.btn-user span {
+    float: left;
+}
+
+.btn-user:hover {
+    /* color:#00B2EE; */
+    -moz-transform: scale(0.94) translate(10px);
+    -webkit-transform: scale(1.1) translate(10px);
+    -o-transform: scale(0.94) translate(10px);
+    transform: scale(0.94) translate(10px);
+}
+
 
 .btn-signup {
     outline: 0;
