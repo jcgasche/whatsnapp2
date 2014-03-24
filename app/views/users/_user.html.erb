@@ -1,8 +1,11 @@
 <li>
   <%= gravatar_for user, size: 52 %>
 	<%= form_for(current_user.relationships.build(followed_id: user.id)) do |f| %>
-	  <div><%= f.hidden_field :followed_id %></div>
-	  <%= f.submit "#{user.name} #{user.email}" , class: "btn-user" %>
+	  <%= f.hidden_field :followed_id %>
+	  <%= f.submit "#{user.name}" , class: "btn-user" %>
+	   <div style="font-size: 10px; text-align: right;"><%= "#{user.email}" %></div>
+	   <div style="font-size: 10px; text-align: right;">Twitter account</div>
+	   <div style="font-size: 10px; text-align: right;">Facebook account</div>
 	<% end %>
 
   <% if current_user.admin? && !current_user?(user) %>
