@@ -40,8 +40,6 @@ class MicropostsController < ApplicationController
     @user= User.find_by_id(@micropost.recipient_id) 
     @old_notes= current_user.notes(@user).first
     @new_notes= old_notes.prepend(self.content)
-
-
       if @new_notes.save
         #flash[:success] = "You just sent a message to #{User.find_by_id(@micropost.recipient_id).name}"
         respond_to do |format|

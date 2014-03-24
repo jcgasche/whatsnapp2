@@ -295,6 +295,22 @@ input[type="password"], input[type="password"] {
     width: 100% !important;
 }
 
+.btn-pin-notes {
+    outline: 0;
+    border:0;
+    background: transparent;
+    width:auto !important;
+    margin:0px auto 0px auto;
+    padding:0px 0px;
+    /* display: block;*/
+    font-size: 10px;
+    font-weight: 300;
+    color:#00B2EE;
+    position: relative;
+    /* text-align: left;*/
+    float: none;
+}
+
 .btn-user {
     outline: 0;
     border:0;
