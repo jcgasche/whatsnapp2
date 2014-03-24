@@ -19,7 +19,7 @@ class RelationshipsController < ApplicationController
   end
 
 
-def correct_user
+  def correct_user
     @relationship = current_user.relationship.find_by(followed_id: params[:id])
     @relationship ||= current_user.relationship.find_by(follower_id: params[:id])
     redirect_to root_url if @micropost.nil?

@@ -61,7 +61,18 @@ $(function() {
 
       if (keycode == 13)
       {
-       myfield.form.submit();
+       var $form = $("#message-form"),
+      $submit = $form.find('button[type="submit"]'),
+      message_value = $form.find('input[name="micropost[content]"]').val(),
+      recipient_value = $form.find('input[name="recipient[recipient_id]"]').val(),
+      url = '/microposts';
+
+      /* Send the data using post */
+
+      $.post(url, {
+        recipient_id: recipient_value,
+        content: message_value
+      });
        return false;
      }
      else

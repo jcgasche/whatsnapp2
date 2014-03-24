@@ -252,15 +252,26 @@ padding: 10px 0;
 }
 }
 
-.microposts .homefeed{
-list-style: none;
-margin: 10px 0 0 0;
+.feed{
+	list-style: none;
+	margin: 10px 0 0 0;
+	text-align: right;
+	color:#00B2EE;
 
-li {
-padding: 10px 0;
-border-top: 1px solid #e8e8e8;
+	li {
+	padding: 10px 0;
+	}
+	}
+
+.feed span.content a{
+	color:#00B2EE;
 }
+.feed span.user a{
+	float: left;
+	color:#B0171F;
 }
+
+
 
 .microposts .new{
 text-align: right;
@@ -301,6 +312,24 @@ margin: 0px 0 0 0;
 color:#00B2EE;
 li {
 padding: 0px 0;
+}
+a {
+font-size:10px;
+color: #B0171F;
+}
+}
+
+.microposts .new{
+text-align: right;
+list-style: none;
+margin: 0px 0 0 0;
+color:#FE2E64;
+li {
+padding: 0px 0;
+}
+a {
+font-size:10px;
+color: #B0171F;
 }
 }
 

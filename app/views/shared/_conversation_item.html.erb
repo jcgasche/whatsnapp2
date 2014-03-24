@@ -1,19 +1,20 @@
 <%if current_user?(conversation_item.user) %>
 <li class= "sent" id="<%= conversation_item.id %>">
-<%elsif false %>
-<li class= "new" id="<%= conversation_item.id %>">
-<% conversation_item.has_been_read %>
-<%else%>
-<li class= "received" id="<%= conversation_item.id %>">
-<%end%>
-    <span class="content"><%= conversation_item.content %></span>
-    <span class="timestamp"><%= time_ago_in_words(conversation_item.created_at) %> ago.</span>
-  <% if current_user?(conversation_item.user) %>
-    <%= link_to "pin this to the notes", conversation_item, remote: true, style: "color:#00B2EE;" %>
+	<%elsif conversation_item.new? %>
+	<li class= "new" id="<%= conversation_item.id %>">
+		<% conversation_item.has_been_read %>
+		<% conversation_item.save %>
+		<%else%>
+		<li class= "received" id="<%= conversation_item.id %>">
+			<%end%>
+			<span class="content"><%= conversation_item.content %></span>
+			<span class="timestamp"><%= time_ago_in_words(conversation_item.created_at) %> ago.</span>
+			<%= link_to "pin this to the notes", pin_path, remote: true, style: "color:#00B2EE;" %>
+			<% if current_user?(conversation_item.user) %>
 
-    <%= link_to "delete", conversation_item, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: conversation_item.content %>
+			<%= link_to "delete", conversation_item, method: :delete,
+			data: { confirm: "You sure?" },
+			title: conversation_item.content %>
 
-  <% end %>
-</li>
+			<% end %>
+		</li>

@@ -12,7 +12,7 @@ class MicropostsController < ApplicationController
       if @old_notes
         @old_notes.destroy
       end
-      @old_notes= current_user.notes(@user).first
+      #@old_notes= current_user.notes(@user).first
     end
     if signed_in?
       @conversation_items = current_user.conversation(@user).paginate(page: params[:page], :per_page => 7)
@@ -24,7 +24,6 @@ class MicropostsController < ApplicationController
         format.html { redirect_to @user }
         format.js
       end
-
     else
       @feed_items = []
       redirect_to @user
@@ -35,6 +34,25 @@ class MicropostsController < ApplicationController
     @user=User.find_by_id(@micropost.recipient_id)
     @micropost.destroy
     redirect_to @user
+  end
+
+  def pin
+    @user= User.find_by_id(@micropost.recipient_id) 
+    @old_notes= current_user.notes(@user).first
+    @new_notes= old_notes.prepend(self.content)
+
+
+      if @new_notes.save
+        #flash[:success] = "You just sent a message to #{User.find_by_id(@micropost.recipient_id).name}"
+        respond_to do |format|
+          format.html { redirect_to @user }
+          format.js
+        end
+      end
+  end
+
+  def has_been_read
+    self.new = false
   end
 
   private

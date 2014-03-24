@@ -14,6 +14,11 @@ class Micropost < ActiveRecord::Base
 			user_id: user.id)
 	end
 
+	def self.not_read_destinated_to(user)
+		where("(recipient_id = :user_id AND new = :true AND is_note = :false)",
+			user_id: user.id, true: true, false: false)
+	end
+
 	def self.from_conversation_between(user1, user2)
 
 		where("((recipient_id = :user2_id AND user_id = :user1_id)

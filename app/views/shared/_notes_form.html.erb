@@ -7,7 +7,7 @@
 
 <%= render 'shared/error_messages', object: f.object %>
 <div class="field">
-	<%= f.text_area :content, value: @notes_item.content.to_s, class: "form-control-notes", rows: "10", onKeyPress: "return submitenter(this,event)" %>
+	<%= f.text_area :content, value: @notes_item.content.to_s, class: "form-control-notes", rows: "10" %>
 </div>
 <%= f.submit "Save", class: "btn btn-info btn-block", style: "float: right; " %>
 

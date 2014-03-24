@@ -13,7 +13,7 @@
           <%= link_to "WhatsNapp//", root_path, id: "logo-text" %>  
           <%= link_to current_user.name, current_user, class: "usernametitle" %>  
           <ul class= "nav pull-right" id="logged_in_menu">
-            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "News", root_path %></li>
             <li><%= link_to "Help", help_path %></li>
             <li><%= link_to "Users", users_path %></li>
             <li  class="dropdown">
@@ -38,7 +38,7 @@
             <li><%= form_for(:session, url: sessions_path, html: { class: "form-inline" , :id => 'sign-in-form'}) do |f| %></li>
             <li class="input-group"><%= f.text_field :email, class: "span3", id:"input_to_be_loaded", placeholder: "Email address"%></li>
             <li class="input-group"><%= f.password_field :password, class: "span3", placeholder: "Password"%></li>
-            <li class="input-group"><%= f.submit "Sign in", class: "btn btn-signin" , id: "sign-in-button" %> </li>
+            <li class="input-group" style="margin-top: 6px;"><%= f.submit "Sign in", class: "btn btn-signin" , id: "sign-in-button" %> </li>
             <% end %>
           </ul>
           <% end %>
