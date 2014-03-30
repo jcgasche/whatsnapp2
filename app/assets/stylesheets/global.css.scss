@@ -55,7 +55,8 @@ h3 {
 
 #conversation {
     min-height: 500px;
-    height: 800px;
+    max-height: 1000px;
+    overflow: auto;
     padding-left: 20px;
     padding-bottom: 15px;
     padding-top: 15px;

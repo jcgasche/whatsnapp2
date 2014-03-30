@@ -67,6 +67,7 @@
 
 	$("#message-form").submit(function sendmessage(event) 
 	{
+		$('#input_to_be_loaded').css('background-color','#f00');
 
 		/* get some values from elements on the page: */
 		var $form = $( this ),
@@ -80,9 +81,7 @@
 			recipient_id: recipient_value, 
 			message: message_value 
 		});
-
 		$('#input_to_be_loaded').css('background-color','#0ff');
-
 		
 	});
 

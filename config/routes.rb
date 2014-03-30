@@ -14,7 +14,7 @@ SampleApp::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#home'
   
-  match '/pin',       to: 'microposts#pin',       via: 'get'
+  match 'microposts',       to: 'microposts#update',       via: 'patch'
   match '/aureline',    to: 'static_pages#aureline',    via: 'get'
   match '/charles',    to: 'static_pages#charles',    via: 'get'
   match '/amaury',    to: 'static_pages#amaury',    via: 'get'

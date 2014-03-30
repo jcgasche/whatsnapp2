@@ -1,36 +1,42 @@
 <!-- this is a form to pin to the notes -->
-<%= form_for(@micropost, remote: true, :method => :POST) do |f| %>
+<%= form_for(@micropost, remote: true, :method => :PATCH) do |f| %>
 
-<%if current_user?(conversation_item.user) %>
-	<li class= "sent" id="<%= conversation_item.id %>">
-	<!-- if the current user is the recipient, pinning to the notes recipient is the user -->
-	<%= f.hidden_field :recipient_id, :value => conversation_item.recipient_id %>
-
-<%elsif conversation_item.new? %>
-	<li class= "new" id="<%= conversation_item.id %>">
+	<%if current_user?(conversation_item.user) %>
+		<li class= "sent" id="<%= conversation_item.id %>">
+		<!-- if the current user is the recipient, pinning to the notes recipient is the user -->
+		<%= f.hidden_field :recipient_id, :value => conversation_item.recipient_id %>
+		<%= f.hidden_field :user_id, :value => conversation_item.user_id%>
+	<%elsif conversation_item.new? %>
+		<li class= "new" id="<%= conversation_item.id %>">
+			<!-- if the current user is not the recipient, pinning to the notes recipient is the recipient -->
+			<%= f.hidden_field :recipient_id, :value => conversation_item.user_id %>
+			<%= f.hidden_field :user_id, :value => conversation_item.recipient_id%>
+			<% conversation_item.has_been_read %>
+			<% conversation_item.save %>
+	<%else%>
+		<li class= "received" id="<%= conversation_item.id %>">
 		<!-- if the current user is not the recipient, pinning to the notes recipient is the recipient -->
 		<%= f.hidden_field :recipient_id, :value => conversation_item.user_id %>
-		<% conversation_item.has_been_read %>
-		<% conversation_item.save %>
-<%else%>
-	<!-- if the current user is not the recipient, pinning to the notes recipient is the recipient -->
-	<%= f.hidden_field :recipient_id, :value => conversation_item.user_id %>
-	<li class= "received" id="<%= conversation_item.id %>">
-<%end%>
+		<%= f.hidden_field :user_id, :value => conversation_item.recipient_id%>
+	<%end%>
 
-	<span class="content"><%= conversation_item.content %></span>
-	<span class="timestamp"><%= time_ago_in_words(conversation_item.created_at) %> ago.</span>
-	<% if current_user?(conversation_item.user) %>
+		<span class="content"><%= conversation_item.content %></span>
+		<span class="timestamp"><%= time_ago_in_words(conversation_item.created_at) %> ago.</span>
+		<% if current_user?(conversation_item.user) %>
 
-		<%= link_to "delete", conversation_item, method: :delete,
-			data: { confirm: "You sure?" },
-			title: conversation_item.content %>
-			<% end %>
-			
-		<%= f.hidden_field :is_note, :value => true %>
-		<%= f.hidden_field :content, :value => conversation_item.content << "\n \n"<< current_user.notes(conversation_item.user).first.content.to_s%>
-		<%= f.submit "Pin to the notes", class: "btn-pin-notes", style: "float: none; " %>
+			<%= link_to "delete", conversation_item, method: :delete,
+				data: { confirm: "You sure?" },
+				title: conversation_item.content %>
+
 		<% end %>
+		
+		
+		<%= f.hidden_field :is_note, :value => true %>
+		<%= f.hidden_field :content, :value => conversation_item.content%>
+		<%= f.submit "Pin to the notes", class: "btn-pin-notes", style: "float: none; " %>
 
 
 	</li>
+<% end %>
+
+

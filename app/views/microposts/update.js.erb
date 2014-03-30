@@ -1,0 +1,5 @@
+
+$("#conversation-messages").html("<%= escape_javascript(render('shared/conversation')) %>")
+$("#message-form").html("<%= escape_javascript(render('shared/micropost_form')) %>")
+$("#notes-form").html("<%= escape_javascript(render('shared/notes_form')) %>")
+$('#input_to_be_loaded').css('background-color','#f00');
